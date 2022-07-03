@@ -22,7 +22,7 @@ namespace API.Controllers
         public async Task<ActionResult<IEnumerable<Activity>>> GetActivities()
         {
             _logger.LogInformation("Inside GetActivities");
-            return await _context.Activities.ToListAsync();
+            return Ok(await _context.Activities.ToListAsync());
         }
 
         [HttpGet("{id}")] //Activities/id
